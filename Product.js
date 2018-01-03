@@ -42,7 +42,7 @@ var prodcuts = [{
 			addProduct : function(productID){
 				var index = products.findIndex(p => p.name == productID.name);
 				if(index == null) {
-					console.log("Товар уже в корзині");
+					console.log("Товар уже в кошику");
 				return;
 				}
         productBasket.push(productID);
