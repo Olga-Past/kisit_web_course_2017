@@ -59,10 +59,14 @@ var prodcuts = [{
 			updateProductQuantity : function(productID, quantity) {
 			var index = products.findIndex(p => p.name == productID.name);
 			if(index == undefined) {
-				console.log("Корзина пуста");
+				console.log("У кошик нічого не внеслось");
 				return;
-			}          
-
+			}         
+			if (productID.inventory == 0)
+				console.log("Кошик порожній");
+				return;	
+			productID.inventory -= quantity;
+			p.quantity += quantity;
 		},
 
 		getItemCount: function() {
